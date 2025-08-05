@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function displayUserInfo(user2) {
+            const name = user2.name || "unknown";
+            const age = user2.age || "unknown";
+            const city = user2.location?.city || "unknown"; // tránh lỗi khi truy cập vào thuộc tính sâu nếu thuộc tính cha không tồn tại.
+            const country = user2.location?.country || "unknown";
+            const title = user2.job?.title || "unknown";
+            const company = user2.job?.company || "unknown";
+            const email = user2.contact?.email || "unknown";
+            const phone = user2.contact?.phone || "unknown";
+
+            return `${name} is ${age} years old, lives in ${city}, ${country}, works as ${title} at ${company}, and contacted via ${email} or ${phone}.`;
+        }
+        let user1 = {
+            name: "Anna",
+            age: 30,
+            location: {
+                city: "Da Nang",
+                country: "Vietnam"
+            },
+        };
+        let user2 = {
+            name: "John",
+            age: 25,
+            location: {
+                city: "Hanoi",
+                country: "Vietnam"
+            },
+            contact: {
+                email: "john@example.com",
+                phone: "0123456789"
+            },
+            job: {
+                title: "Developer",
+                company: "Tech Corp"
+            }
+        };
+
+        console.log(displayUserInfo(user2));
+    </script>
+</body>
+</html>
