@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function sum(arr) {
+            let total = 0; // Biến lưu tổng các số chẵn
+            // Duyệt qua từng phần tử cả mảng
+            for (let number of arr) {
+                if (number % 2 == 0) {
+                    total += number; // Nếu là số chẵn thì cộng vào tổng
+                }
+            }
+
+            return total; // Trả về tổng cuối cùng
+        }      
+        // In kết quả
+        console.log(sum([1, 2, 3, 4, 5, 6]));                  
+    </script>
+</body>
+</html>
